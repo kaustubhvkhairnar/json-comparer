@@ -1,57 +1,42 @@
 import React from 'react';
 
-function Wave() {
+function Wave({ darkMode }) {
+  const waveColor = darkMode ? '#121212' : '#f5f5f5'; // Adjust wave color based on theme
   return (
     <div className="wave-container">
       <svg
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 24 150 28"
+        viewBox="0 0 1200 200"
         preserveAspectRatio="none"
-        shapeRendering="auto"
         style={{
           position: 'absolute',
           bottom: 0,
           width: '100%',
-          height: 'auto',
+          height: '200px',
         }}
       >
         <defs>
           <path
-            id="gentle-wave"
-            d="M-160 44c30 0 
-            58-18 88-18s
-            58 18 88 18 
-            58-18 88-18 
-            58 18 88 18
-            v44h-352z"
+            id="wave-path"
+            d="M0,120 C150,200 350,0 600,120 C850,240 1050,60 1200,120 L1200,0 L0,0 Z"
           />
         </defs>
-        <g className="parallax">
+        <g>
           <use
-            href="#gentle-wave"
-            x="48"
-            y="0"
-            fill="rgba(255,255,255,0.7)"
-          />
-          <use
-            href="#gentle-wave"
-            x="48"
-            y="3"
-            fill="rgba(255,255,255,0.5)"
-          />
-          <use
-            href="#gentle-wave"
-            x="48"
-            y="5"
-            fill="rgba(255,255,255,0.3)"
-          />
-          <use
-            href="#gentle-wave"
-            x="48"
-            y="7"
-            fill="#fff"
-          />
+            href="#wave-path"
+            fill={waveColor}
+          >
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="10s"
+              from="0,0"
+              to="-1200,0"
+              repeatCount="indefinite"
+            />
+          </use>
         </g>
       </svg>
     </div>

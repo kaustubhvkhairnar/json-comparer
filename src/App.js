@@ -24,7 +24,7 @@ function App() {
   const [json1, setJson1] = useState('');
   const [json2, setJson2] = useState('');
   const [differences, setDifferences] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Set dark mode to be enabled by default
   const [loading, setLoading] = useState(false);
   const [showResult, setShowResult] = useState(false);
 
@@ -101,7 +101,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-        <Wave />
+        <Wave darkMode={darkMode} /> {/* Pass darkMode to adjust wave color */}
         <AppBar
           position="static"
           elevation={0}
@@ -114,7 +114,7 @@ function App() {
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, textAlign: 'center' }}
+              sx={{ flexGrow: 1, textAlign: 'center', color: darkMode ? '#fff' : '#000' }} // Adjust color based on mode
             >
               JSON Comparer Tool
             </Typography>
@@ -145,7 +145,8 @@ function App() {
             />
             <Box
               position="relative"
-              display="inline-flex"
+              display="flex"
+              justifyContent="center" // Center the compare button
               sx={{ mt: 2 }}
             >
               <Button
@@ -171,9 +172,7 @@ function App() {
               )}
             </Box>
             <Collapse in={showResult}>
-              <ComparisonResult
-                differences={differences}
-              />
+              <ComparisonResult differences={differences} />
             </Collapse>
           </Paper>
         </Container>

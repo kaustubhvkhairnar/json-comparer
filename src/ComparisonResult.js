@@ -38,12 +38,12 @@ function ComparisonResult({ differences }) {
           let iconColor = '';
 
           if (diff.type === 'added') {
-            text = `Added at line ${diff.lineNumber}: ${diff.value}`;
+            text = `Added at line ${diff.lineNumber}:\n${diff.value}`;
             bgColor = 'success.light';
             IconComponent = AddCircle;
             iconColor = 'success.main';
           } else if (diff.type === 'removed') {
-            text = `Removed at line ${diff.lineNumber}: ${diff.value}`;
+            text = `Removed at line ${diff.lineNumber}:\n${diff.value}`;
             bgColor = 'error.light';
             IconComponent = RemoveCircle;
             iconColor = 'error.main';

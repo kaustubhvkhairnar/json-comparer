@@ -2,23 +2,23 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 15vh;
+  height: 200px;
   overflow: hidden;
+  z-index: 0;
 }
 
 .waves {
   position: relative;
-  width: 100%;
+  width: 200%;
   height: 100%;
-  animation: move-forever 25s linear infinite;
 }
 
-@keyframes move-forever {
+@keyframes move-waves {
   0% {
-    transform: translate3d(-90px, 0, 0);
+    transform: translateX(0);
   }
 
   100% {
-    transform: translate3d(85px, 0, 0);
+    transform: translateX(-50%);
   }
 }
