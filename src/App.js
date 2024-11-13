@@ -18,7 +18,6 @@ import {
 } from '@mui/material';
 import JsonInput from './JsonInput';
 import ComparisonResult from './ComparisonResult';
-import Wave from './Wave'; // Import the Wave component
 
 function App() {
   const [json1, setJson1] = useState('');
@@ -101,7 +100,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-        <Wave darkMode={darkMode} /> {/* Pass darkMode to adjust wave color */}
+
         <AppBar
           position="static"
           elevation={0}

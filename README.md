@@ -1,6 +1,6 @@
 # JSON Comparer Tool
 
-A web-based JSON comparer tool that allows users to compare two JSON files or inputs. The tool highlights the differences between the two JSON objects and provides features like dark mode, syntax highlighting, wave animation background, and more.
+A web-based JSON comparer tool that allows users to compare two JSON files or inputs. The tool highlights the differences between the two JSON objects and provides features like dark mode, syntax highlighting and more.
 
 ## Table of Contents
 
@@ -25,7 +25,6 @@ A web-based JSON comparer tool that allows users to compare two JSON files or in
 - **Line Numbers for Differences**: Displays the line numbers where differences are found.
 - **Dark Mode**: Dark mode enabled by default with the option to toggle light/dark mode.
 - **Responsive Design**: The application is responsive and works well on various screen sizes.
-- **Wave Animation Background**: An animated wave background for visual appeal.
 - **Centered Elements**: The title and compare button are centered for a balanced layout.
 
 ## Demo
@@ -109,7 +108,6 @@ To deploy the application to GitHub Pages:
 - **Material-UI (MUI)** - React components for faster and easier web development.
 - **CodeMirror** - Versatile text editor implemented in JavaScript for the browser.
 - **Diff Package** - Library to calculate the differences between two texts.
-- **SVG and CSS Animations** - For creating the wave animation background.
 
 ## Contributing
 
@@ -147,6 +145,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Material-UI** for the beautiful UI components.
 - **CodeMirror** for the excellent code editor.
 - **Diff** library contributors for the text difference calculation.
-- **SVG Backgrounds** for inspiration on wave animations.
 
 ---
