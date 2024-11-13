@@ -10,7 +10,6 @@ import {
 import {
   AddCircle,
   RemoveCircle,
-  ChangeCircle,
 } from '@mui/icons-material';
 
 function ComparisonResult({ differences }) {
@@ -39,26 +38,15 @@ function ComparisonResult({ differences }) {
           let iconColor = '';
 
           if (diff.type === 'added') {
-            text = `Added: ${diff.key} = ${JSON.stringify(
-              diff.value
-            )}`;
+            text = `Added at line ${diff.lineNumber}: ${diff.value}`;
             bgColor = 'success.light';
             IconComponent = AddCircle;
             iconColor = 'success.main';
           } else if (diff.type === 'removed') {
-            text = `Removed: ${diff.key} = ${JSON.stringify(
-              diff.value
-            )}`;
+            text = `Removed at line ${diff.lineNumber}: ${diff.value}`;
             bgColor = 'error.light';
             IconComponent = RemoveCircle;
             iconColor = 'error.main';
-          } else if (diff.type === 'changed') {
-            text = `Changed: ${diff.key} from ${JSON.stringify(
-              diff.value1
-            )} to ${JSON.stringify(diff.value2)}`;
-            bgColor = 'warning.light';
-            IconComponent = ChangeCircle;
-            iconColor = 'warning.main';
           }
 
           return (
@@ -76,7 +64,14 @@ function ComparisonResult({ differences }) {
                   sx={{ color: iconColor }}
                 />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText
+                primary={text}
+                primaryTypographyProps={{
+                  style: {
+                    whiteSpace: 'pre-wrap',
+                  },
+                }}
+              />
             </ListItem>
           );
         })}
